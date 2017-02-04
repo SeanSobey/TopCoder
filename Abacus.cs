@@ -38,3 +38,11 @@ public class Abacus
 		return new string('o', number) + original.Substring(0, original.Length - number);
 	}
 }
+public class AbacusSolution : ISolution
+{
+	public bool Enabled { get; } = false;
+	public Action[] Theories { get; } = new Action[]
+	{
+		() => Console.WriteLine(new Abacus().add(new [] {"ooo---oooooo", "---ooooooooo", "---ooooooooo", "---ooooooooo", "oo---ooooooo", "---ooooooooo"}, 5) + "=" + ""), 
+	};
+}

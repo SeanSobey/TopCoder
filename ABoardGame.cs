@@ -47,3 +47,12 @@ public class ABoardGame
         return "Draw";
     }
 }
+
+public class ABoardGameSolution : ISolution
+{
+	public bool Enabled { get; } = false;
+	public Action[] Theories { get; } = new Action[]
+	{
+		() => Console.WriteLine(new ABoardGame().whoWins(new string[] {".....A", "......", "..A...", "...B..", "......", "......"}) + "=" + "Draw"), 
+	};
+}

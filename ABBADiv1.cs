@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 public class ABBADiv1
 {
@@ -22,4 +23,12 @@ public class ABBADiv1
         
         return canObtain(string2, target);
     }
+}
+public class ABBADiv1Solution : ISolution
+{
+	public bool Enabled { get; } = false;
+	public Action[] Theories { get; } = new Action[]
+	{ 
+		() => Console.WriteLine(new ABBADiv1().canObtain("AAABBAABB", "BAABAAABAABAABBBAAAAAABBAABBBBBBBABB") + "=" + "Possible"),
+	};
 }

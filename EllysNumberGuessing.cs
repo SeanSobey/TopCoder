@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 public class EllysNumberGuessing
 {
@@ -39,4 +40,12 @@ public class EllysNumberGuessing
         
         return -1;
     }
+}
+public class EllysNumberGuessingSolution : ISolution
+{
+	public bool Enabled { get; } = false;
+	public Action[] Theories { get; } = new Action[]
+	{
+		() => Console.WriteLine(new EllysNumberGuessing().getNumber(new [] { 500000,600000,700000 }, new [] { 120013,220013,79987 }) + "=" + "379987"), 
+	};
 }

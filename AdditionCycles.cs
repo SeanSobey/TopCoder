@@ -1,3 +1,5 @@
+using System;
+
 public class AdditionCycles
 {
 	public int cycleLength(int n)
@@ -18,4 +20,12 @@ public class AdditionCycles
 			return count;
 		return cycleLength(original, combined, count + 1);
 	}
+}
+public class AdditionCyclesSolution : ISolution
+{
+	public bool Enabled { get; } = false;
+	public Action[] Theories { get; } = new Action[]
+	{
+		() => Console.WriteLine(new AdditionCycles().cycleLength(26) + "=" + "4"), 
+	};
 }

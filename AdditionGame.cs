@@ -18,8 +18,15 @@ public class AdditionGame
 	}
 }
 
-System.Console.WriteLine(new AdditionGame().getMaximumPoints(3, 4, 5, 3) + "=" + 13);
-System.Console.WriteLine(new AdditionGame().getMaximumPoints(1, 1, 1, 8) + "=" + 3);
-System.Console.WriteLine(new AdditionGame().getMaximumPoints(3, 5, 48, 40) + "=" + 1140);
-System.Console.WriteLine(new AdditionGame().getMaximumPoints(36, 36, 36, 13) + "=" + 446);
-System.Console.WriteLine(new AdditionGame().getMaximumPoints(8, 2, 6, 13) + "=" + 57);
+public class AdditionGameSolution : ISolution
+{
+	public bool Enabled { get; } = false;
+	public Action[] Theories { get; } = new Action[]
+	{
+		() => Console.WriteLine(new AdditionGame().getMaximumPoints(3, 4, 5, 3) + "=" + 13),
+		() => Console.WriteLine(new AdditionGame().getMaximumPoints(1, 1, 1, 8) + "=" + 3),
+		() => Console.WriteLine(new AdditionGame().getMaximumPoints(3, 5, 48, 40) + "=" + 1140),
+		() => Console.WriteLine(new AdditionGame().getMaximumPoints(36, 36, 36, 13) + "=" + 446),
+		() => Console.WriteLine(new AdditionGame().getMaximumPoints(8, 2, 6, 13) + "=" + 57),
+	};
+}

@@ -21,3 +21,11 @@ public class EllysSubstringSorter
         return strings.First();
 	}
 }
+public class EllysSubstringSorterSolution : ISolution
+{
+	public bool Enabled { get; } = false;
+	public Action[] Theories { get; } = new Action[]
+	{
+		() => Console.WriteLine(new EllysSubstringSorter().getMin("TOPCODER", 4) + "=" + "COPTODER"), 
+	};
+}
