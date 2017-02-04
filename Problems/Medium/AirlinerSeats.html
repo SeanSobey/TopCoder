@@ -1,0 +1,132 @@
+<h2>Problem Statement</h2>
+            <div ng-bind-html="problem.intro" class="ng-binding"><p><i>Note: this problem statement contains an image that may not display properly if viewed outside the applet.</i></p>
+
+<p>When on a long flight, it is often helpful to be in an aisle seat (a seat adjacent to an aisle). This way you don't need to bother another passenger when you need to go to the restroom or take a walk. However, because large airliners are built to hold as many passengers as possible, only a limited number of seats can be aisle seats.</p>
+
+<p>A typical arrangement of 10 seats in a single row with 2 aisles is as follows:</p>
+<p><img src="AirlinerSeats.png"></p>
+
+<p>Aisle seats are colored green in the above example (there are four such seats), while center and window seats are colored orange.</p>
+
+<p>All of the seats are equally wide and each aisle has the same width as a single seat. If an airplane's row is wide enough to fit <b>width</b> seats or aisles, and the airline wants exactly <b>seats</b> seats to be fitted in a row, find the arrangement which maximizes the number of aisle seats. A row should be formatted as a string of characters so that seats and aisles are represented by '<tt>S</tt>' and '<tt>.</tt>' (dot) characters, respectively. If there are multiple arrangements which maximize the number of aisle seats, find the lexicographically smallest one (the dot character comes before '<tt>S</tt>' in the lexicographical order).</p>
+
+<p>You are to return the required arrangement (or part of it) as a  containing no more than 2 s:
+</p><ul>
+<li>If <b>width</b> is 50 or less, return the entire arrangement as a single  inside the .</li>
+<li>If <b>width</b> is between 51 and 100 (inclusive), return the entire arrangement as two s, split after the first 50 characters.</li>
+<li>If <b>width</b> is more than 100, return two s containing the first and last 50 characters of the arrangement, respectively.</li>
+</ul>
+<p></p></div>
+            <h2>Definition</h2>
+            <div class="problemStatementRow">
+                <div class="statementName">Class:</div>
+                <div class="textWhite ng-binding">AirlinerSeats</div>
+            </div>
+            <div class="problemStatementRow">
+                <div class="statementName">Method:</div>
+                <div class="textWhite ng-binding">mostAisleSeats</div>
+            </div>
+            <div class="problemStatementRow">
+                <div class="statementName">Parameters:</div>
+                <div class="textWhite ng-binding">int, int</div>
+            </div>
+            <div class="problemStatementRow">
+                <div class="statementName">Returns:</div>
+                <div class="textWhite ng-binding">string[]</div>
+            </div>
+            <div class="problemStatementRow">
+                <div class="statementName">Method signature:</div>
+                <div class="textWhite ng-binding">string[] mostAisleSeats(int width, int seats)</div>
+            </div>
+            <!-- ngIf: lang(langIdx).id != 6 --><div class="problemStatementRow ng-scope" ng-if="lang(langIdx).id != 6">(be sure your method is public)</div><!-- end ngIf: lang(langIdx).id != 6 -->
+            <h2>Limits</h2>
+            <div class="problemStatementRow">
+                <div class="statementName">Time limit (s):</div>
+                <div class="textWhite ng-binding">840.000</div>
+            </div>
+            <div class="problemStatementRow">
+                <div class="statementName">Memory limit (MB):</div>
+                <div class="textWhite ng-binding">64</div>
+            </div>
+            <!-- ngIf: problem.spec -->
+            <!-- ngIf: problem.component.notes && problem.component.notes.length > 0 -->
+            <!-- ngIf: problem.component.constraints && problem.component.constraints.length > 0 --><div ng-if="problem.component.constraints &amp;&amp; problem.component.constraints.length > 0" class="ng-scope">
+                <h2>Constraints</h2>
+                <!-- ngRepeat: constraint in problem.constraints --><div class="problemStatementRow ng-scope" ng-repeat="constraint in problem.constraints">
+                    <div ng-bind-html="'- ' + constraint" class="ng-binding">- <b>width</b> will be between 1 and 100000, inclusive.</div>
+                </div><!-- end ngRepeat: constraint in problem.constraints --><div class="problemStatementRow ng-scope" ng-repeat="constraint in problem.constraints">
+                    <div ng-bind-html="'- ' + constraint" class="ng-binding">- <b>seats</b> will be between 0 and <b>width</b>, inclusive.</div>
+                </div><!-- end ngRepeat: constraint in problem.constraints -->
+            </div><!-- end ngIf: problem.component.constraints && problem.component.constraints.length > 0 -->
+            <!-- ngIf: hasExampleTest --><div ng-if="hasExampleTest" class="ng-scope">
+                <h2>Examples</h2>
+                <!-- ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">0)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">6</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">3</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: {"..SS.S" }</div>
+                    </div>
+                    <!-- ngIf: test.annotationHtml --><div class="problemStatementRow ng-scope" ng-if="test.annotationHtml">
+                        <div class="textWhite ng-binding" ng-bind-html="test.annotationHtml">All three seats can be made aisle seats and this is the lexicographically smallest such arrangement.</div>
+                    </div><!-- end ngIf: test.annotationHtml -->
+                </div><!-- end ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">1)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">6</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">4</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: {"S.SS.S" }</div>
+                    </div>
+                    <!-- ngIf: test.annotationHtml --><div class="problemStatementRow ng-scope" ng-if="test.annotationHtml">
+                        <div class="textWhite ng-binding" ng-bind-html="test.annotationHtml">This is the only arrangement where all four seats are aisle seats.</div>
+                    </div><!-- end ngIf: test.annotationHtml -->
+                </div><!-- end ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">2)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">12</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">10</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: {"S.SS.SSSSSSS" }</div>
+                    </div>
+                    <!-- ngIf: test.annotationHtml --><div class="problemStatementRow ng-scope" ng-if="test.annotationHtml">
+                        <div class="textWhite ng-binding" ng-bind-html="test.annotationHtml">The picture in the problem statement shows another arrangement with the maximum number of aisle seats, but this one is lexicographically smaller.</div>
+                    </div><!-- end ngIf: test.annotationHtml -->
+                </div><!-- end ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">3)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">11</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">7</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: {".SS.SS.SS.S" }</div>
+                    </div>
+                    <!-- ngIf: test.annotationHtml -->
+                </div><!-- end ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">4)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">52</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">52</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: {"SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS", "SS" }</div>
+                    </div>
+                    <!-- ngIf: test.annotationHtml -->
+                </div><!-- end ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">5)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">200</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">2</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: {"..................................................", "...............................................S.S" }</div></div></div></div>

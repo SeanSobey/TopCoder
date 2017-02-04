@@ -1,0 +1,148 @@
+<h2>Problem Statement</h2>
+            <div ng-bind-html="problem.intro" class="ng-binding"><i>NOTE: This problem statement contains superscripts that may not display properly if viewed outside of the applet.</i>
+<br><br>
+
+Your friend's birthday is approaching, and he wants his age to be written in candles on his cake.  In fact, he has already placed several candles on the cake.  The candles are arranged in a single row, and there are two different colors of candles.  One color represents the digit '0' and the other color represents the digit '1'.  You don't want to relayout the candles from scratch, so you have to determine if there's a base for which the existing candles spell out your friend's age.  To simplify the task, you can choose any strictly positive base, not necessarily an integer one.
+<br><br>
+
+For example, if the candles are "00010" and your friend's age is 10, then the candles spell out 10 in base 10 (decimal). If the candles are "10101" and your friend's age is 21, then you can say that "10101" is 21 in base 2 (binary). If the candles are "10100" and your friend's age is 6, then the candles spell out 6 in base sqrt(2)=1.41421356237.... Note that you are not allowed to rotate the cake, so "10" cannot be read as "01".
+<br><br>
+
+You are given a  <b>candlesLine</b>, where the i-th character is the digit ('0' or '1') represented by the i-th candle in the row of candles on the cake.  You are also given an  <b>age</b>, which is your friend's age.  Return the positive base for which the candles represent your friend's age.  If there is no such base, return -1, and if there are multiple such bases, return -2.</div>
+            <h2>Definition</h2>
+            <div class="problemStatementRow">
+                <div class="statementName">Class:</div>
+                <div class="textWhite ng-binding">AgeEncoding</div>
+            </div>
+            <div class="problemStatementRow">
+                <div class="statementName">Method:</div>
+                <div class="textWhite ng-binding">getRadix</div>
+            </div>
+            <div class="problemStatementRow">
+                <div class="statementName">Parameters:</div>
+                <div class="textWhite ng-binding">int, string</div>
+            </div>
+            <div class="problemStatementRow">
+                <div class="statementName">Returns:</div>
+                <div class="textWhite ng-binding">double</div>
+            </div>
+            <div class="problemStatementRow">
+                <div class="statementName">Method signature:</div>
+                <div class="textWhite ng-binding">double getRadix(int age, string candlesLine)</div>
+            </div>
+            <!-- ngIf: lang(langIdx).id != 6 --><div class="problemStatementRow ng-scope" ng-if="lang(langIdx).id != 6">(be sure your method is public)</div><!-- end ngIf: lang(langIdx).id != 6 -->
+            <h2>Limits</h2>
+            <div class="problemStatementRow">
+                <div class="statementName">Time limit (s):</div>
+                <div class="textWhite ng-binding">840.000</div>
+            </div>
+            <div class="problemStatementRow">
+                <div class="statementName">Memory limit (MB):</div>
+                <div class="textWhite ng-binding">64</div>
+            </div>
+            <!-- ngIf: problem.spec -->
+            <!-- ngIf: problem.component.notes && problem.component.notes.length > 0 --><div ng-if="problem.component.notes &amp;&amp; problem.component.notes.length > 0" class="ng-scope">
+                <h2>Notes</h2>
+                <!-- ngRepeat: note in problem.notes --><div class="problemStatementRow ng-scope" ng-repeat="note in problem.notes">
+                    <div ng-bind-html="'- ' + note" class="ng-binding">- The number a<sub>n</sub>a<sub>n-1</sub>...a<sub>1</sub>a<sub>0</sub> in base B is equal to a<sub>n</sub>*B<sup>n</sup> + a<sub>n-1</sub>*B<sup>n-1</sup> + ... + a<sub>1</sub>*B + a<sub>0</sub>.</div>
+                </div><!-- end ngRepeat: note in problem.notes --><div class="problemStatementRow ng-scope" ng-repeat="note in problem.notes">
+                    <div ng-bind-html="'- ' + note" class="ng-binding">- The returned value must have an absolute or relative error less than 1e-9.</div>
+                </div><!-- end ngRepeat: note in problem.notes -->
+            </div><!-- end ngIf: problem.component.notes && problem.component.notes.length > 0 -->
+            <!-- ngIf: problem.component.constraints && problem.component.constraints.length > 0 --><div ng-if="problem.component.constraints &amp;&amp; problem.component.constraints.length > 0" class="ng-scope">
+                <h2>Constraints</h2>
+                <!-- ngRepeat: constraint in problem.constraints --><div class="problemStatementRow ng-scope" ng-repeat="constraint in problem.constraints">
+                    <div ng-bind-html="'- ' + constraint" class="ng-binding">- <b>age</b> will be between 1 and 100, inclusive.</div>
+                </div><!-- end ngRepeat: constraint in problem.constraints --><div class="problemStatementRow ng-scope" ng-repeat="constraint in problem.constraints">
+                    <div ng-bind-html="'- ' + constraint" class="ng-binding">- <b>candlesLine</b> will contain between 1 and 50 characters, inclusive.</div>
+                </div><!-- end ngRepeat: constraint in problem.constraints --><div class="problemStatementRow ng-scope" ng-repeat="constraint in problem.constraints">
+                    <div ng-bind-html="'- ' + constraint" class="ng-binding">- Each character in <b>candlesLine</b> will be '0' (zero) or '1' (one).</div>
+                </div><!-- end ngRepeat: constraint in problem.constraints -->
+            </div><!-- end ngIf: problem.component.constraints && problem.component.constraints.length > 0 -->
+            <!-- ngIf: hasExampleTest --><div ng-if="hasExampleTest" class="ng-scope">
+                <h2>Examples</h2>
+                <!-- ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">0)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">10</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">"00010"</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: 10.0</div>
+                    </div>
+                    <!-- ngIf: test.annotationHtml --><div class="problemStatementRow ng-scope" ng-if="test.annotationHtml">
+                        <div class="textWhite ng-binding" ng-bind-html="test.annotationHtml">This is the first example from the statement: simply a decimal notation of the given age. Note that notation can have leading zeroes.</div>
+                    </div><!-- end ngIf: test.annotationHtml -->
+                </div><!-- end ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">1)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">21</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">"10101"</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: 2.0</div>
+                    </div>
+                    <!-- ngIf: test.annotationHtml --><div class="problemStatementRow ng-scope" ng-if="test.annotationHtml">
+                        <div class="textWhite ng-binding" ng-bind-html="test.annotationHtml">This is the second example from the statement: "10101" is a binary notation of the given age.</div>
+                    </div><!-- end ngIf: test.annotationHtml -->
+                </div><!-- end ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">2)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">6</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">"10100"</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: 1.414213562373095</div>
+                    </div>
+                    <!-- ngIf: test.annotationHtml --><div class="problemStatementRow ng-scope" ng-if="test.annotationHtml">
+                        <div class="textWhite ng-binding" ng-bind-html="test.annotationHtml">This is the third example from the statement.</div>
+                    </div><!-- end ngIf: test.annotationHtml -->
+                </div><!-- end ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">3)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">21</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">"10111111110111101111111100111111110111111111111100"</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: 0.9685012944510603</div>
+                    </div>
+                    <!-- ngIf: test.annotationHtml -->
+                </div><!-- end ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">4)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">16</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">"1"</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: -1.0</div>
+                    </div>
+                    <!-- ngIf: test.annotationHtml --><div class="problemStatementRow ng-scope" ng-if="test.annotationHtml">
+                        <div class="textWhite ng-binding" ng-bind-html="test.annotationHtml">In any base, "1" represents the age of 1, so it's impossible to get the age of 16.</div>
+                    </div><!-- end ngIf: test.annotationHtml -->
+                </div><!-- end ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">5)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">1</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">"1"</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: -2.0</div>
+                    </div>
+                    <!-- ngIf: test.annotationHtml --><div class="problemStatementRow ng-scope" ng-if="test.annotationHtml">
+                        <div class="textWhite ng-binding" ng-bind-html="test.annotationHtml">In any base, "1" represents the age of 1.</div>
+                    </div><!-- end ngIf: test.annotationHtml -->
+                </div><!-- end ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">6)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">1</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">"001000"</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: 1.0</div></div></div></div>

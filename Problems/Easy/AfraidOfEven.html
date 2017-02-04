@@ -1,0 +1,121 @@
+<h2>Problem Statement</h2>
+            <div ng-bind-html="problem.intro" class="ng-binding">A sequence of integers a[0], a[1], ..., a[N-1], where N &gt;= 3, is called an <i>arithmetic progression</i> if the difference between any two successive terms in the sequence is a constant. More precisely, it is an arithmetic progression if a[i] - a[i-1] = a[i+1] - a[i] for every integer i such that 0 &lt; i &lt; N-1.  
+<br>
+<br>
+Sasha and Pasha are students sharing the same room. Once, when Pasha had left the room, Sasha was in a good mood. So he took a piece of chalk and wrote an arithmetic progression on the blackboard. The progression consisted of at least 4 elements, all of which were positive integers. Then Sasha went to class, and Pasha came back.
+<br>
+<br>
+Pasha is a very nice person, but there's one problem with him -- he's frightened of even numbers! So, when he returned, he decided to make all the numbers on the board odd. He did this by repeatedly finding an arbitrary even number X, erasing it, and writing X/2 in its place. He continued to perform this step until no even numbers remained.
+<br>
+<br>
+Your task is to help Sasha restore the initial progression. You will be given a  <b>seq</b>, where the i-th element is the i-th number in the sequence written on the blackboard after Pasha's actions. Return an  whose i-th element is the i-th number in a sequence that Sasha could have originally written on the blackboard. The constraints will ensure that at least one such sequence exists. If there are several such sequences, choose the one among them whose  representation is lexicographically smallest.</div>
+            <h2>Definition</h2>
+            <div class="problemStatementRow">
+                <div class="statementName">Class:</div>
+                <div class="textWhite ng-binding">AfraidOfEven</div>
+            </div>
+            <div class="problemStatementRow">
+                <div class="statementName">Method:</div>
+                <div class="textWhite ng-binding">restoreProgression</div>
+            </div>
+            <div class="problemStatementRow">
+                <div class="statementName">Parameters:</div>
+                <div class="textWhite ng-binding">int[]</div>
+            </div>
+            <div class="problemStatementRow">
+                <div class="statementName">Returns:</div>
+                <div class="textWhite ng-binding">int[]</div>
+            </div>
+            <div class="problemStatementRow">
+                <div class="statementName">Method signature:</div>
+                <div class="textWhite ng-binding">int[] restoreProgression(int[] seq)</div>
+            </div>
+            <!-- ngIf: lang(langIdx).id != 6 --><div class="problemStatementRow ng-scope" ng-if="lang(langIdx).id != 6">(be sure your method is public)</div><!-- end ngIf: lang(langIdx).id != 6 -->
+            <h2>Limits</h2>
+            <div class="problemStatementRow">
+                <div class="statementName">Time limit (s):</div>
+                <div class="textWhite ng-binding">840.000</div>
+            </div>
+            <div class="problemStatementRow">
+                <div class="statementName">Memory limit (MB):</div>
+                <div class="textWhite ng-binding">64</div>
+            </div>
+            <!-- ngIf: problem.spec -->
+            <!-- ngIf: problem.component.notes && problem.component.notes.length > 0 --><div ng-if="problem.component.notes &amp;&amp; problem.component.notes.length > 0" class="ng-scope">
+                <h2>Notes</h2>
+                <!-- ngRepeat: note in problem.notes --><div class="problemStatementRow ng-scope" ng-repeat="note in problem.notes">
+                    <div ng-bind-html="'- ' + note" class="ng-binding">- The lexicographically smaller of two different s containing the same number of elements is the one with a smaller number at the first position where they differ.</div>
+                </div><!-- end ngRepeat: note in problem.notes --><div class="problemStatementRow ng-scope" ng-repeat="note in problem.notes">
+                    <div ng-bind-html="'- ' + note" class="ng-binding">- It is guaranteed that all elements of the resulting  will fit into a 32-bit signed integer data type.</div>
+                </div><!-- end ngRepeat: note in problem.notes -->
+            </div><!-- end ngIf: problem.component.notes && problem.component.notes.length > 0 -->
+            <!-- ngIf: problem.component.constraints && problem.component.constraints.length > 0 --><div ng-if="problem.component.constraints &amp;&amp; problem.component.constraints.length > 0" class="ng-scope">
+                <h2>Constraints</h2>
+                <!-- ngRepeat: constraint in problem.constraints --><div class="problemStatementRow ng-scope" ng-repeat="constraint in problem.constraints">
+                    <div ng-bind-html="'- ' + constraint" class="ng-binding">- <b>seq</b> will contain between 4 and 50 elements, inclusive.</div>
+                </div><!-- end ngRepeat: constraint in problem.constraints --><div class="problemStatementRow ng-scope" ng-repeat="constraint in problem.constraints">
+                    <div ng-bind-html="'- ' + constraint" class="ng-binding">- Each element of <b>seq</b> will be between 1 and 1000, inclusive.</div>
+                </div><!-- end ngRepeat: constraint in problem.constraints --><div class="problemStatementRow ng-scope" ng-repeat="constraint in problem.constraints">
+                    <div ng-bind-html="'- ' + constraint" class="ng-binding">- Each element of <b>seq</b> will be odd.</div>
+                </div><!-- end ngRepeat: constraint in problem.constraints --><div class="problemStatementRow ng-scope" ng-repeat="constraint in problem.constraints">
+                    <div ng-bind-html="'- ' + constraint" class="ng-binding">- There will exist at least one arithmetic progression from which Pasha would produce exactly the sequence described by <b>seq</b>.</div>
+                </div><!-- end ngRepeat: constraint in problem.constraints -->
+            </div><!-- end ngIf: problem.component.constraints && problem.component.constraints.length > 0 -->
+            <!-- ngIf: hasExampleTest --><div ng-if="hasExampleTest" class="ng-scope">
+                <h2>Examples</h2>
+                <!-- ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">0)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{1, 1, 3, 1, 5}</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: {1, 2, 3, 4, 5 }</div>
+                    </div>
+                    <!-- ngIf: test.annotationHtml --><div class="problemStatementRow ng-scope" ng-if="test.annotationHtml">
+                        <div class="textWhite ng-binding" ng-bind-html="test.annotationHtml">If the progression written by Pasha was {1, 2, 3, 4, 5}, then Sasha would divide 2 by 2 once and 4 by 2 twice to produce exactly {1, 1, 3, 1, 5}. Note that Pasha could have written other progressions, e.g., {2, 4, 6, 8, 10}, but {1, 2, 3, 4, 5} has the lexicographically smallest  representation.</div>
+                    </div><!-- end ngIf: test.annotationHtml -->
+                </div><!-- end ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">1)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{9, 7, 5, 3, 1}</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: {9, 7, 5, 3, 1 }</div>
+                    </div>
+                    <!-- ngIf: test.annotationHtml --><div class="problemStatementRow ng-scope" ng-if="test.annotationHtml">
+                        <div class="textWhite ng-binding" ng-bind-html="test.annotationHtml">It is possible that all terms in the original progression were odd. In this case Pasha wouldn't perform any replacements.
+<br>
+<br>
+Note that an arithmetic progression doesn't have to be an increasing sequence.</div>
+                    </div><!-- end ngIf: test.annotationHtml -->
+                </div><!-- end ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">2)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{999, 999, 999, 999}</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: {999, 999, 999, 999 }</div>
+                    </div>
+                    <!-- ngIf: test.annotationHtml --><div class="problemStatementRow ng-scope" ng-if="test.annotationHtml">
+                        <div class="textWhite ng-binding" ng-bind-html="test.annotationHtml">A sequence where all terms are the same is also an arithmetic progression.</div>
+                    </div><!-- end ngIf: test.annotationHtml -->
+                </div><!-- end ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">3)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{7, 47, 5, 113, 73, 179, 53}</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: {14, 47, 80, 113, 146, 179, 212 }</div>
+                    </div>
+                    <!-- ngIf: test.annotationHtml -->
+                </div><!-- end ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">4)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{749, 999, 125, 1}</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: {1498, 999, 500, 1 }</div>
+                    </div>
+                    <!-- ngIf: test.annotationHtml --><div class="problemStatementRow ng-scope" ng-if="test.annotationHtml">
+                        <div class="textWhite ng-binding" ng-bind-html="test.annotationHtml">Some elements of the original progression could be greater than 1000.
+</div></div></div></div>

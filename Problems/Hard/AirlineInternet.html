@@ -1,0 +1,152 @@
+<h2>Problem Statement</h2>
+            <div ng-bind-html="problem.intro" class="ng-binding"><p>An airline wishes to supply passengers with Internet access on its flights. To do so, it is going to to install powerful radio transceivers on all of its aircraft and at the airports it operates from. The airports will be connected to the Internet and the aircraft will be able to access the connection via a radio link to any airport that is within the range of its tranceiver. Aircraft will also be able to relay the Internet connection on to other aircraft that are within range, so even if an aircraft cannot communicate directly with an airport, it may be able to access the Internet via another aircraft. The cost of the radio equipment is proportional to its range and the airline wishes to supply the Internet connection at minimal cost. It therefore wants your help in determining the minimum transceiver range required such that all of the aircraft can access the Internet all of the time.</p>
+
+<p>The area that the airline operates in is represented as a 2-D cartesian plane. You are given a  <b>airports</b> containing the locations of the airports that the airline operates from. Each element will contain two space-separated integers, formatted without leading zeros, giving the x- and y-coordinates of an airport. You are also given the flight-schedule in a  <b>flights</b>. Each element of <b>flights</b> describes a single flight and will be formatted "<i>&lt;start&gt; &lt;destination&gt; &lt;take-off time&gt; &lt;landing time&gt;</i>" (quotes for clarity). All elements are integers formatted without leading zeros. <i>&lt;start&gt;</i> and <i>&lt;destination&gt;</i> reference zero-based indexes of airports in <b>airports</b>. The aircraft starts out at the airport referenced by <i>&lt;start&gt;</i> at time <i>&lt;take-off time&gt;</i>, and flies in a straight line at constant speed to the airport referenced in <i>&lt;destination&gt;</i>, arriving at <i>&lt;landing time&gt;</i>. All radio tranceivers have the same range <tt>R</tt> and an aircraft can communicate with an airport or another aircraft if the in-plane distance between the two is no greater than <tt>R</tt>. An aircraft can access the Internet if it can either communicate with an airport, or it can communicate with another aircraft that can access the Internet (directly or indirectly). Return a double containing the minimum value of <tt>R</tt> which ensures that all aircraft can access the Internet at all times.</p></div>
+            <h2>Definition</h2>
+            <div class="problemStatementRow">
+                <div class="statementName">Class:</div>
+                <div class="textWhite ng-binding">AirlineInternet</div>
+            </div>
+            <div class="problemStatementRow">
+                <div class="statementName">Method:</div>
+                <div class="textWhite ng-binding">minimumRange</div>
+            </div>
+            <div class="problemStatementRow">
+                <div class="statementName">Parameters:</div>
+                <div class="textWhite ng-binding">string[], string[]</div>
+            </div>
+            <div class="problemStatementRow">
+                <div class="statementName">Returns:</div>
+                <div class="textWhite ng-binding">double</div>
+            </div>
+            <div class="problemStatementRow">
+                <div class="statementName">Method signature:</div>
+                <div class="textWhite ng-binding">double minimumRange(string[] airportLocations, string[] flights)</div>
+            </div>
+            <!-- ngIf: lang(langIdx).id != 6 --><div class="problemStatementRow ng-scope" ng-if="lang(langIdx).id != 6">(be sure your method is public)</div><!-- end ngIf: lang(langIdx).id != 6 -->
+            <h2>Limits</h2>
+            <div class="problemStatementRow">
+                <div class="statementName">Time limit (s):</div>
+                <div class="textWhite ng-binding">840.000</div>
+            </div>
+            <div class="problemStatementRow">
+                <div class="statementName">Memory limit (MB):</div>
+                <div class="textWhite ng-binding">64</div>
+            </div>
+            <!-- ngIf: problem.spec -->
+            <!-- ngIf: problem.component.notes && problem.component.notes.length > 0 --><div ng-if="problem.component.notes &amp;&amp; problem.component.notes.length > 0" class="ng-scope">
+                <h2>Notes</h2>
+                <!-- ngRepeat: note in problem.notes --><div class="problemStatementRow ng-scope" ng-repeat="note in problem.notes">
+                    <div ng-bind-html="'- ' + note" class="ng-binding">- Your return value must be accurate to within an absolute or relative tolerance of 1E-9.</div>
+                </div><!-- end ngRepeat: note in problem.notes -->
+            </div><!-- end ngIf: problem.component.notes && problem.component.notes.length > 0 -->
+            <!-- ngIf: problem.component.constraints && problem.component.constraints.length > 0 --><div ng-if="problem.component.constraints &amp;&amp; problem.component.constraints.length > 0" class="ng-scope">
+                <h2>Constraints</h2>
+                <!-- ngRepeat: constraint in problem.constraints --><div class="problemStatementRow ng-scope" ng-repeat="constraint in problem.constraints">
+                    <div ng-bind-html="'- ' + constraint" class="ng-binding">- <b>airportLocations</b> will contain between 2 and 10 elements, inclusive.</div>
+                </div><!-- end ngRepeat: constraint in problem.constraints --><div class="problemStatementRow ng-scope" ng-repeat="constraint in problem.constraints">
+                    <div ng-bind-html="'- ' + constraint" class="ng-binding">- Each element of <b>airportLocations</b> will contain 2 space-separated integers, formatted without leading zeros, between 0 and 1000, inclusive.</div>
+                </div><!-- end ngRepeat: constraint in problem.constraints --><div class="problemStatementRow ng-scope" ng-repeat="constraint in problem.constraints">
+                    <div ng-bind-html="'- ' + constraint" class="ng-binding">- The elements of <b>airportLocations</b> will be distinct.</div>
+                </div><!-- end ngRepeat: constraint in problem.constraints --><div class="problemStatementRow ng-scope" ng-repeat="constraint in problem.constraints">
+                    <div ng-bind-html="'- ' + constraint" class="ng-binding">- <b>flights</b> will contain between 1 and 20 elements, inclusive.</div>
+                </div><!-- end ngRepeat: constraint in problem.constraints --><div class="problemStatementRow ng-scope" ng-repeat="constraint in problem.constraints">
+                    <div ng-bind-html="'- ' + constraint" class="ng-binding">- Each element of <b>flights</b> will be formatted "&lt;start&gt; &lt;destination&gt; &lt;take-off time&gt; &lt;landing time&gt;" (quotes for clarity).</div>
+                </div><!-- end ngRepeat: constraint in problem.constraints --><div class="problemStatementRow ng-scope" ng-repeat="constraint in problem.constraints">
+                    <div ng-bind-html="'- ' + constraint" class="ng-binding">- &lt;start&gt; and &lt;destination&gt; will be integers, formatted without leading zeros, between 0 and N-1, inclusive, where N is the number of elements in <b>airportLocations</b>.</div>
+                </div><!-- end ngRepeat: constraint in problem.constraints --><div class="problemStatementRow ng-scope" ng-repeat="constraint in problem.constraints">
+                    <div ng-bind-html="'- ' + constraint" class="ng-binding">- &lt;take-off time&gt; and &lt;landing time&gt; will be integers, formatted without leading zeros, between 0 and 1000, inclusive.</div>
+                </div><!-- end ngRepeat: constraint in problem.constraints --><div class="problemStatementRow ng-scope" ng-repeat="constraint in problem.constraints">
+                    <div ng-bind-html="'- ' + constraint" class="ng-binding">- In each element of <b>flights</b>, &lt;start&gt; and &lt;destination&gt; will be distinct and &lt;take-off time&gt; will be strictly less than &lt;landing time&gt;.</div>
+                </div><!-- end ngRepeat: constraint in problem.constraints -->
+            </div><!-- end ngIf: problem.component.constraints && problem.component.constraints.length > 0 -->
+            <!-- ngIf: hasExampleTest --><div ng-if="hasExampleTest" class="ng-scope">
+                <h2>Examples</h2>
+                <!-- ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">0)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{"0 0","100 0"}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{"0 1 0 100"}</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: 50.0</div>
+                    </div>
+                    <!-- ngIf: test.annotationHtml --><div class="problemStatementRow ng-scope" ng-if="test.annotationHtml">
+                        <div class="textWhite ng-binding" ng-bind-html="test.annotationHtml">A single aircraft flies between two airports. It is farthest from an airport when it is exactly halfway between them, so the minimum required range is half the distance between the two airports.</div>
+                    </div><!-- end ngIf: test.annotationHtml -->
+                </div><!-- end ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">1)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{"0 0","100 0"}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{"0 1 0 100","0 1 25 125","0 1 50 150","0 1 75 175"}</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: 25.0</div>
+                    </div>
+                    <!-- ngIf: test.annotationHtml --><div class="problemStatementRow ng-scope" ng-if="test.annotationHtml">
+                        <div class="textWhite ng-binding" ng-bind-html="test.annotationHtml">This time, four aircraft fly between the same two airports, setting off at intervals of 25 time units. The aircraft closer to the airports can relay the connection to those farther away, so the minimum required range is shorter.</div>
+                    </div><!-- end ngIf: test.annotationHtml -->
+                </div><!-- end ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">2)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{"25 100","0 50","90 150","22 22","60 1","95 8","12 40"}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{"0 1 0 500","2 5 10 300","2 0 100 200"
+,"3 6 150 400","4 5 50 450","5 1 0 300"
+,"2 6 10 100"}</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: 64.28201130009927</div>
+                    </div>
+                    <!-- ngIf: test.annotationHtml -->
+                </div><!-- end ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">3)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{"0 0","50 0","100 0"}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{"0 1 0 100"}</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: 25.0</div>
+                    </div>
+                    <!-- ngIf: test.annotationHtml --><div class="problemStatementRow ng-scope" ng-if="test.annotationHtml">
+                        <div class="textWhite ng-binding" ng-bind-html="test.annotationHtml">All airports have radio transceivers, even if no aircraft fly to or from them.</div>
+                    </div><!-- end ngIf: test.annotationHtml -->
+                </div><!-- end ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">4)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{"417 262","519 592","941 778"}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{"0 1 376 534","0 2 603 763","1 0 137 431"
+,"0 1 525 583","2 1 367 551","0 1 953 996"
+,"0 1 668 886"}</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: 246.618769031594</div>
+                    </div>
+                    <!-- ngIf: test.annotationHtml -->
+                </div><!-- end ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">5)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{"101 591","283 183","346 696","436 638","738 46"}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{"3 0 855 890","2 0 260 698","3 4 229 743"
+,"1 2 519 898","3 1 863 955","4 0 407 993"
+,"2 4 872 969","0 3 320 663"}</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: 298.18759041416865</div>
+                    </div>
+                    <!-- ngIf: test.annotationHtml -->
+                </div><!-- end ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">6)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{"152 998","656 487","75 999","913 535"}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{"1 0 347 530","0 3 75 819","3 1 893 935"
+,"1 0 971 992","2 0 471 887","2 0 924 955"}</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: 358.8652253980556</div></div></div></div>

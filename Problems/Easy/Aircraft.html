@@ -1,0 +1,202 @@
+<h2>Problem Statement</h2>
+            <div ng-bind-html="problem.intro" class="ng-binding">In aviation, a "near miss" occurs if the distance between two aircraft at some point in time is less than or equal to some threshold distance <b>R</b>. At a moment in time, the positions and velocities of two aircraft are known exactly. Assuming that each aircraft continues to fly with constant speed and direction, you need to work out if the aircraft will undergo a near miss now or at some point in the future.
+<br><br>
+You will be given the threshold distance <b>R</b> and the positions and velocities of the aircraft in 4 s: <b>p1</b>, <b>v1</b>, <b>p2</b> and <b>v2</b>. The position of the first aircraft in 3-D cartesian space is given by (<b>p1</b>[0] , <b>p1</b>[1] , <b>p1</b>[2]) and its velocity vector by (<b>v1</b>[0] , <b>v1</b>[1] , <b>v1</b>[2]) and similarly the second aircraft's position and velocity are given by (<b>p2</b>[0] , <b>p2</b>[1] , <b>p2</b>[2]) and (<b>v2</b>[0] , <b>v2</b>[1] , <b>v2</b>[2]). So, if an aircraft's initial position is the vector <b>p</b> and its velocity vector is <b>v</b>, the position of this aircraft at some future time t will be <b>p</b> + <b>v</b> * t. You should return a String containing "YES" if the aircraft will undergo a near miss now or in the future or "NO" if they won't (quotes for clarity).</div>
+            <h2>Definition</h2>
+            <div class="problemStatementRow">
+                <div class="statementName">Class:</div>
+                <div class="textWhite ng-binding">Aircraft</div>
+            </div>
+            <div class="problemStatementRow">
+                <div class="statementName">Method:</div>
+                <div class="textWhite ng-binding">nearMiss</div>
+            </div>
+            <div class="problemStatementRow">
+                <div class="statementName">Parameters:</div>
+                <div class="textWhite ng-binding">int[], int[], int[], int[], int</div>
+            </div>
+            <div class="problemStatementRow">
+                <div class="statementName">Returns:</div>
+                <div class="textWhite ng-binding">string</div>
+            </div>
+            <div class="problemStatementRow">
+                <div class="statementName">Method signature:</div>
+                <div class="textWhite ng-binding">string nearMiss(int[] p1, int[] v1, int[] p2, int[] v2, int R)</div>
+            </div>
+            <!-- ngIf: lang(langIdx).id != 6 --><div class="problemStatementRow ng-scope" ng-if="lang(langIdx).id != 6">(be sure your method is public)</div><!-- end ngIf: lang(langIdx).id != 6 -->
+            <h2>Limits</h2>
+            <div class="problemStatementRow">
+                <div class="statementName">Time limit (s):</div>
+                <div class="textWhite ng-binding">840.000</div>
+            </div>
+            <div class="problemStatementRow">
+                <div class="statementName">Memory limit (MB):</div>
+                <div class="textWhite ng-binding">64</div>
+            </div>
+            <!-- ngIf: problem.spec -->
+            <!-- ngIf: problem.component.notes && problem.component.notes.length > 0 --><div ng-if="problem.component.notes &amp;&amp; problem.component.notes.length > 0" class="ng-scope">
+                <h2>Notes</h2>
+                <!-- ngRepeat: note in problem.notes --><div class="problemStatementRow ng-scope" ng-repeat="note in problem.notes">
+                    <div ng-bind-html="'- ' + note" class="ng-binding">- The distance between two points <tt>(x1, y1, z1)</tt> and <tt>(x2, y2, z2)</tt> is given by <tt>sqrt((x1-x2)<sup>2</sup> + (y1-y2)<sup>2</sup> + (z1-z2)<sup>2</sup>)</tt>.</div>
+                </div><!-- end ngRepeat: note in problem.notes -->
+            </div><!-- end ngIf: problem.component.notes && problem.component.notes.length > 0 -->
+            <!-- ngIf: problem.component.constraints && problem.component.constraints.length > 0 --><div ng-if="problem.component.constraints &amp;&amp; problem.component.constraints.length > 0" class="ng-scope">
+                <h2>Constraints</h2>
+                <!-- ngRepeat: constraint in problem.constraints --><div class="problemStatementRow ng-scope" ng-repeat="constraint in problem.constraints">
+                    <div ng-bind-html="'- ' + constraint" class="ng-binding">- <b>p1</b>, <b>v1</b>, <b>p2</b> and <b>v2</b> will contain exactly 3 elements.</div>
+                </div><!-- end ngRepeat: constraint in problem.constraints --><div class="problemStatementRow ng-scope" ng-repeat="constraint in problem.constraints">
+                    <div ng-bind-html="'- ' + constraint" class="ng-binding">- Each element of <b>p1</b>, <b>v1</b>, <b>p2</b> and <b>v2</b> will be between -10000 and 10000, inclusive.</div>
+                </div><!-- end ngRepeat: constraint in problem.constraints --><div class="problemStatementRow ng-scope" ng-repeat="constraint in problem.constraints">
+                    <div ng-bind-html="'- ' + constraint" class="ng-binding">- <b>R</b> will be between 0 and 10000, inclusive.</div>
+                </div><!-- end ngRepeat: constraint in problem.constraints -->
+            </div><!-- end ngIf: problem.component.constraints && problem.component.constraints.length > 0 -->
+            <!-- ngIf: hasExampleTest --><div ng-if="hasExampleTest" class="ng-scope">
+                <h2>Examples</h2>
+                <!-- ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">0)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{15,50,5}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{25,1,0}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{161,102,9}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{-10,-10,-1}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">10</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: "YES"</div>
+                    </div>
+                    <!-- ngIf: test.annotationHtml --><div class="problemStatementRow ng-scope" ng-if="test.annotationHtml">
+                        <div class="textWhite ng-binding" ng-bind-html="test.annotationHtml">At time 4, the first aircraft will be at position {115,54,5} and the second at {121,62,5}, which is the first point in time at which they are exactly 10 distance units apart.</div>
+                    </div><!-- end ngIf: test.annotationHtml -->
+                </div><!-- end ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">1)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{0,0,0}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{2,2,0}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{9,0,5}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{-2,2,0}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">5</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: "YES"</div>
+                    </div>
+                    <!-- ngIf: test.annotationHtml --><div class="problemStatementRow ng-scope" ng-if="test.annotationHtml">
+                        <div class="textWhite ng-binding" ng-bind-html="test.annotationHtml">At time 2.25, aircraft 1 will be at {4.5, 4.5, 0} and aircraft 2 at {4.5, 4.5, 5}, exactly a distance of 5 units apart.</div>
+                    </div><!-- end ngIf: test.annotationHtml -->
+                </div><!-- end ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">2)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{0,0,0}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{-2,2,0}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{9,0,5}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{2,2,0}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">5</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: "NO"</div>
+                    </div>
+                    <!-- ngIf: test.annotationHtml --><div class="problemStatementRow ng-scope" ng-if="test.annotationHtml">
+                        <div class="textWhite ng-binding" ng-bind-html="test.annotationHtml">The aircraft are flying away from each other here, so the distance always increases with time.</div>
+                    </div><!-- end ngIf: test.annotationHtml -->
+                </div><!-- end ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">3)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{-2838,-7940,-2936}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{1,1,-2}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{532,3850,9590}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{1,0,-3}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">3410</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: "YES"</div>
+                    </div>
+                    <!-- ngIf: test.annotationHtml --><div class="problemStatementRow ng-scope" ng-if="test.annotationHtml">
+                        <div class="textWhite ng-binding" ng-bind-html="test.annotationHtml">The closest approach of the aircraft occurs at time 12,158</div>
+                    </div><!-- end ngIf: test.annotationHtml -->
+                </div><!-- end ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">4)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{-8509,9560,345}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{-89,-33,62}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{-5185,-1417,2846}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{-58,24,26}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">8344</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: "YES"</div>
+                    </div>
+                    <!-- ngIf: test.annotationHtml --><div class="problemStatementRow ng-scope" ng-if="test.annotationHtml">
+                        <div class="textWhite ng-binding" ng-bind-html="test.annotationHtml">A near miss occurs between times 111 and 112</div>
+                    </div><!-- end ngIf: test.annotationHtml -->
+                </div><!-- end ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">5)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{-7163,-371,-2459}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{-59,-41,-14}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{-2398,-426,-5487}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{-43,27,67}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">5410</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: "NO"</div>
+                    </div>
+                    <!-- ngIf: test.annotationHtml --><div class="problemStatementRow ng-scope" ng-if="test.annotationHtml">
+                        <div class="textWhite ng-binding" ng-bind-html="test.annotationHtml">The aircraft almost have a near miss between times 15 and 16, but stay just outside the threshold distance.</div>
+                    </div><!-- end ngIf: test.annotationHtml -->
+                </div><!-- end ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">6)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{1774,-4491,7810}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{-12,19,-24}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{2322,3793,9897}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{-12,19,-24}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">10000</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: "YES"</div>
+                    </div>
+                    <!-- ngIf: test.annotationHtml --><div class="problemStatementRow ng-scope" ng-if="test.annotationHtml">
+                        <div class="textWhite ng-binding" ng-bind-html="test.annotationHtml">The aircraft are here flying with identical velocities, so the distance between them never changes. The distance at time 0 is lower than the threshold, so a near miss is already underway.</div>
+                    </div><!-- end ngIf: test.annotationHtml -->
+                </div><!-- end ngRepeat: test in examples track by $index --><div class="ng-scope" ng-repeat="test in examples track by $index" data-ng-init="testNum=$index">
+                    <span class="ng-binding">7)</span>
+                    <!-- ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{3731,8537,5661}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{-70,71,32}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{8701,-1886,-5115}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">{28,-13,7}</div>
+                    </div><!-- end ngRepeat: param in test.params --><div class="problemStatementRow ng-scope" ng-repeat="param in test.params">
+                        <div class="textWhite ng-binding">9766</div>
+                    </div><!-- end ngRepeat: param in test.params -->
+                    <div class="problemStatementRow">
+                        <div class="textWhite ng-binding">Returns: "NO"</div></div></div></div>
