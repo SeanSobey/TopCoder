@@ -10,7 +10,8 @@
 			//var result = new EllysSubstringSorter().getMin("TOPCODER", 4);
 			//var result = new ATaleOfThreeCities().connect(new []{0,0,0}, new []{0,1,2}, new []{2,3}, new []{1,1}, new []{1,5}, new []{3,28});
 			//var result = new ATaleOfThreeCities().connect(new []{-2,-1,0,1,2}, new []{0,0,0,0,0}, new []{-2,-1,0,1,2}, new []{1,1,1,1,1}, new []{-2,-1,0,1,2}, new []{2,2,2,2,2});
-			var result = new Abacus().add(new [] {"ooo---oooooo", "---ooooooooo", "---ooooooooo", "---ooooooooo", "oo---ooooooo", "---ooooooooo"}, 5);
+			//var result = new Abacus().add(new [] {"ooo---oooooo", "---ooooooooo", "---ooooooooo", "---ooooooooo", "oo---ooooooo", "---ooooooooo"}, 5);
+			var result = new AdditionCycles().cycleLength(26);
         }
     }
 }
