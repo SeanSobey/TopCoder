@@ -1,14 +1,17 @@
 using System;
 
-public class AdjacentSwaps
+namespace TopCoder
 {
-
-}
-public class AdjacentSwapsSolution : ISolution
-{
-	public bool Enabled { get; } = false;
-	public Action[] Theories { get; } = new Action[]
+	public class AdjacentSwaps
 	{
-		() => Console.WriteLine("" + "=" + ""), 
-	};
+
+	}
+	public class AdjacentSwapsSolution : ISolution
+	{
+		public bool Enabled { get; } = false;
+		public Action[] Theories { get; } = new Action[]
+		{
+			() => Console.WriteLine("" + "=" + ""), 
+		};
+	}
 }

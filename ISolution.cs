@@ -1,7 +1,10 @@
 using System;
 
-public interface ISolution
+namespace TopCoder
 {
-	bool Enabled { get; }
-	Action[] Theories { get; }
+	public interface ISolution
+	{
+		bool Enabled { get; }
+		Action[] Theories { get; }
+	}
 }

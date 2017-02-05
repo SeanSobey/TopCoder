@@ -1,10 +1,13 @@
 using System;
 
-public class Solution : ISolution
+namespace TopCoder
 {
-	public bool Enabled { get; } = false;
-	public Action[] Theories { get; } = new Action[]
+	public class Solution : ISolution
 	{
-		() => Console.WriteLine("" + "=" + ""), 
-	};
+		public bool Enabled { get; } = false;
+		public Action[] Theories { get; } = new Action[]
+		{
+			() => Console.WriteLine("" + "=" + ""), 
+		};
+	}
 }
