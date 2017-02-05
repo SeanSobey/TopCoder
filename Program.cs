@@ -21,16 +21,3 @@ public class Program
 		}
 	}
 }
-public interface ISolution
-{
-	bool Enabled { get; }
-	Action[] Theories { get; }
-}
-public class Solution : ISolution
-{
-	public bool Enabled { get; } = false;
-	public Action[] Theories { get; } = new Action[]
-	{
-		() => Console.WriteLine("" + "=" + ""), 
-	};
-}
