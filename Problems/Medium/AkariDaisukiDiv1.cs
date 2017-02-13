@@ -19,7 +19,7 @@ namespace TopCoder
 	}
 	public class AkariDaisukiDiv1Solution : ISolution
 	{
-		public bool Enabled { get; } = true;
+		public bool Enabled { get; } = false;
 		public Action[] Theories { get; } = new Action[]
 		{
 			//() => Console.WriteLine(new AkariDaisukiDiv1().countF("a", "b", "c", "x", "axb", 2) + "=" + 2), 
