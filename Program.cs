@@ -1,17 +1,26 @@
-﻿namespace ConsoleApplication
+﻿using System;
+using System.Reflection;
+using System.Linq;
+
+namespace TopCoder
 {
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            //var result = new ABBADiv1().canObtain("AAABBAABB", "BAABAAABAABAABBBAAAAAABBAABBBBBBBABB");
-			//var result = new ABoardGame().whoWins(new string[] {".....A", "......", "..A...", "...B..", "......", "......"});
-			//var result = new EllysNumberGuessing().getNumber(new [] { 500000,600000,700000 }, new [] { 120013,220013,79987 });
-			//var result = new EllysSubstringSorter().getMin("TOPCODER", 4);
-			//var result = new ATaleOfThreeCities().connect(new []{0,0,0}, new []{0,1,2}, new []{2,3}, new []{1,1}, new []{1,5}, new []{3,28});
-			//var result = new ATaleOfThreeCities().connect(new []{-2,-1,0,1,2}, new []{0,0,0,0,0}, new []{-2,-1,0,1,2}, new []{1,1,1,1,1}, new []{-2,-1,0,1,2}, new []{2,2,2,2,2});
-			//var result = new Abacus().add(new [] {"ooo---oooooo", "---ooooooooo", "---ooooooooo", "---ooooooooo", "oo---ooooooo", "---ooooooooo"}, 5);
-			var result = new AdditionCycles().cycleLength(26);
-        }
-    }
+	public class Program
+	{
+		public static void Main(string[] args)
+		{
+			var solutions = Assembly.GetEntryAssembly().DefinedTypes
+				.Where(typeInfo => typeInfo.ImplementedInterfaces.Contains(typeof(ISolution)))
+				.Select(typeInfo => Activator.CreateInstance(typeInfo.AsType()) as ISolution);
+
+			foreach (var solution in solutions)
+			{
+				Console.WriteLine($"Solution: {solution.ToString()}, Enabled: {solution.Enabled}, Theories: {solution.Theories?.Count() ?? 0}");
+				Console.WriteLine("===========================================================");
+				if (solution.Enabled)
+				foreach (var theory in solution.Theories)
+					theory();
+				Console.WriteLine("");
+			}
+		}
+	}
 }
